@@ -11,9 +11,21 @@
     </style>
 </head>
 <body>
-    <script src="../node_modules/three/build/three.min.js"></script>
-    <script src="../node_modules/three/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="../node_modules/three/examples/js/controls/OrbitControls.js"></script>
+    <div>
+        <canvas id='test'></canvas>
+    </div>
+    <div>
+        <button id="btn_1" onclick="player(0)">Botao 1</button>
+        <button id="btn_2" onclick="player(actions.implode_actions)">Botao 2</button>
+        <button id="btn_3" onclick="player(actions.open_actions)">Botao 3</button>
+        <button id="btn_4" onclick="player(actions.close_actions)">Botao 4</button>
+        <button id="btn_5" onclick="pauseAll()">Botao 5</button>
+    </div>
+    <script src="three.min.js"></script>
+    
+    <script src="GLTFLoader.js"></script>
+    
+    <script src="OrbitControls.js"></script>
     
     <script src="main.js"></script>
 </body>
