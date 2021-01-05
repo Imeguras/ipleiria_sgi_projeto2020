@@ -23,7 +23,7 @@
     height: inherit;
     display: inherit;
     position: absolute;
-    background-image: url("../Cama1000-1000.png");
+    background-image: url("Cama1000-1000.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -87,7 +87,7 @@
     height: inherit;
     display: inherit;
     position: absolute;
-    background-image: url("../Cama1000-1000.png");
+    background-image: url("Cama1000-1000.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
