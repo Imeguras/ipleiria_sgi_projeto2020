@@ -1,0 +1,125 @@
+.produtoBlocoPromo{
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    
+}
+.produtoLinhaPromo{
+    width: 100%;
+    height: 350px;
+    display: inherit;
+    position: inherit;
+}
+.produtoPromo{
+    width: 350px;
+    height: inherit;
+    display: inline-flex;
+    position: inherit;
+    margin-inline: 5px;
+}
+.imagemPromo{
+    width: 350px;
+    height: inherit;
+    display: inherit;
+    position: absolute;
+    background-image: url("../Cama1000-1000.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.decorBaixoPromo{
+    width: 350px;
+    height: 14%;
+    top: 66%;
+    display: inherit;
+    position: absolute;
+    background: #CE995C88;
+    border-radius: 5px;
+}
+.tituloGroupPromo{
+    position: relative;
+    display: flex;
+    height: min-content;
+    justify-content: end;
+    width: 100%;
+}
+.tituloDecorPromo{
+    width: 15px;
+    border-radius: 5px;
+    position: relative;
+    display: table-cell;
+    background: #CE995C88;
+    
+}
+.tituloPromo{
+    width: min-content;
+    display: inline;
+    position: relative;
+    font-weight: 900;
+    font-family: nunito;
+    height: 100%;
+    font-size: 20px;
+}
+.produtoBlocoProd{
+    width: 100%;
+    height: auto;
+    display: inherit;
+    position: relative;
+    margin-bottom: 50px;
+}
+.produtoLinhaProd{
+    width: 100%;
+    height: 250px;
+    display: inherit;
+    position: inherit;
+    margin-block: -6%;
+}
+.produtoProd{
+    width: 250px;
+    height: inherit;
+    display: inline-flex;
+    position: inherit;
+    margin-inline: 10px;
+
+}
+.imagemProd{
+    width: 250px;
+    height: inherit;
+    display: inherit;
+    position: absolute;
+    background-image: url("../Cama1000-1000.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.decorBaixoProd{
+    width: 250px;
+    height: 14%;
+    top: 66%;
+    display: inherit;
+    position: absolute;
+    background: #CE995C88;
+    border-radius: 5px;
+}
+.tituloGroupProd{
+    width:100%;
+    align-content: flex-end; 
+    position: absolute; 
+    display: table;
+    height: -moz-min-content;
+}
+.tituloDecorProd{
+    align-content:flex-end;
+    border-radius: 5px;
+    position: relative;
+    display: table-cell;
+    background: #CE995C88;
+    width: 13%;
+}
+.tituloProd{
+    width:auto;
+    display: table-cell;
+    text-align: end;
+    font-weight:900;
+    font-family: nunito;
+    height:100%;
+}
