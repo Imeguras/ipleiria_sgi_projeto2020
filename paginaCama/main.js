@@ -28,7 +28,7 @@ var animations={
 var meuCanvas = document.getElementById('canvas')
 
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 60,825/ 825, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 17.1,825/ 825, 0.1, 1000 );
 
 var renderer = new THREE.WebGLRenderer({canvas: meuCanvas, alpha: true, antialias: true});
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -40,11 +40,11 @@ var loadModel = new THREE.GLTFLoader();
 
 renderer.setSize( 825,825 );
 renderer.shadowMap.enabled = true
-document.body.appendChild( renderer.domElement );
 
-camera.position.x = 80;
-camera.position.y = 50;
-camera.position.z = 200;
+
+camera.position.x = 90;
+camera.position.y = 150;
+camera.position.z = 750;
 camera.lookAt(0,0,0);
 
 
@@ -74,30 +74,22 @@ loadModel.load(
         clip = THREE.AnimationClip.findByName(gltf.animations,i)
         actions[0].push(misturador.clipAction(clip))
     }
-    console.log(actions[0])
-    /*
+    
+    
     for(i of animations.implode){
         clip = THREE.AnimationClip.findByName(gltf.animations,i)
-        actions.implode_actions.push(misturador.clipAction(clip))
+        actions[1].push(misturador.clipAction(clip))
     }
     
-    for(i of animations.open){
+    for(i of animations.opene){
         clip = THREE.AnimationClip.findByName(gltf.animations,i)
-        actions.open_actions.push(misturador.clipAction(clip))
+        actions[2].push(misturador.clipAction(clip))
     }
     
-    for(i of animations.close){
+    for(i of animations.closee){
         clip = THREE.AnimationClip.findByName(gltf.animations,i)
-        actions.close_actions.push(misturador.clipAction(clip))
+        actions[3].push(misturador.clipAction(clip))
     }
-    */
-    
-    
-    /*
-    clip = THREE.AnimationClip.findByName(gltf.animations,animations.implode[2])
-    action = misturador.clipAction( clip );
-    action.play();
-  */
 }
 )
 
@@ -130,6 +122,29 @@ var pauseAll = function(){
   // misturador.stopAllAction()
 }
 
+playerExplodeImplode = function(){
+    actions[0].forEach(element => {
+        element.setLoop(THREE.LoopOnce,1);
+        element.play();
+    });
+    actions[1].forEach(element => {
+        element.setLoop(THREE.LoopOnce);
+        element.startAt(misturador.time + 1.1);
+        element.play();
+    });
+}
+
+playerOpen = function(){
+    if(actions[1].isRunning){
+        
+    }
+    actions[2].forEach(element => {
+        element.clampWhenFinished = true;
+        element.play();
+        element.halt();
+    });
+}
+
 function addLights(){
     var pointLight = new THREE.PointLight( "white", 1 );
     pointLight.position.set( 500, 80, 10 );
@@ -146,3 +161,5 @@ function addLights(){
 }
 animate();
 addLights();
+
+
