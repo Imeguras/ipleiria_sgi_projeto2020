@@ -135,13 +135,13 @@ playerExplodeImplode = function(){
 }
 
 playerOpen = function(){
-    if(actions[1].isRunning){
-        
+    if(actions[1][0].isRunning){
+        console.log("teste")
     }
     actions[2].forEach(element => {
         element.clampWhenFinished = true;
         element.play();
-        element.halt();
+        
     });
 }
 
