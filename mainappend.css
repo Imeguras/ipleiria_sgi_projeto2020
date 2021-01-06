@@ -42,6 +42,7 @@
     height: min-content;
     justify-content: end;
     width: 100%;
+    top: 14%;
 }
 .tituloDecorPromo{
     width: 15px;
@@ -52,27 +53,29 @@
     
 }
 .tituloPromo{
-    width: min-content;
+    width: max-content;
     display: inline;
     position: relative;
     font-weight: 900;
     font-family: nunito;
     height: 100%;
     font-size: 20px;
+    word-wrap: break-word;
+    margin-left: 20px;
 }
 .produtoBlocoProd{
     width: 100%;
     height: auto;
     display: inherit;
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 5%;
 }
 .produtoLinhaProd{
     width: 100%;
     height: 250px;
     display: inherit;
     position: inherit;
-    margin-block: -6%;
+    margin-block: -4%;
 }
 .produtoProd{
     width: 250px;
@@ -101,25 +104,29 @@
     border-radius: 5px;
 }
 .tituloGroupProd{
-    width:100%;
-    align-content: flex-end; 
-    position: absolute; 
-    display: table;
-    height: -moz-min-content;
+    position: relative;
+    display: flex;
+    height: min-content;
+    justify-content: end;
+    width: 100%;
+    top: 14%;
 }
-.tituloDecorProd{
-    align-content:flex-end;
+.tituloDecorProd{    
+    width: 15px;
     border-radius: 5px;
     position: relative;
     display: table-cell;
     background: #CE995C88;
-    width: 13%;
+   
 }
 .tituloProd{
-    width:auto;
-    display: table-cell;
-    text-align: end;
-    font-weight:900;
+    width: max-content;
+    display: inline;
+    position: relative;
+    font-weight: 900;
     font-family: nunito;
-    height:100%;
+    height: 100%;
+    font-size: 20px;
+    word-wrap: break-word;
+    margin-left: 20px;
 }
