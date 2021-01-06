@@ -13,10 +13,8 @@ var animationsBed={
 
 var meuCanvas1 = document.getElementById("camaVerCanvas")
 var scene1 = new THREE.Scene();
-var camera1 = new THREE.PerspectiveCamera( 60, 1, 0.1, 2000 );
+var camera1 = new THREE.PerspectiveCamera( 60, meuCanvas1.offsetWidth/meuCanvas1.offsetHeight, 0.1, 2000 );
 
-
-console.log(meuCanvas1)
 var renderer1= new THREE.WebGLRenderer({canvas: meuCanvas1, alpha: true, antialias: true});
 renderer1.shadowMap.enabled = true
 
@@ -95,7 +93,7 @@ function addLights(){
 addLights();
 funcsCamaVer = function(){
     console.log(document.getElementById('ImagemPromo1-1'))
-    renderer1.setSize(350,350)
+    renderer1.setSize(meuCanvas1.offsetWidth,meuCanvas1.offsetHeight)
     animate1();
     player1(0);
     //document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: none !important;';

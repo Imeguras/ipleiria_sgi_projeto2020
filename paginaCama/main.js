@@ -1,43 +1,64 @@
-
 var animations={
-    rotation:[
-        "bed_rotation",
-        "platform_rotation",
-        "structure_rotation",
-        "divan_rotation",
-        "matress_rotation",
-        "pillow_rotation"
+    explode:[
+        "bed_explode",
+        "divan_explode",
+        "mattress_explode",
+        "pillow_explode",
+        "platform_explode",
+        "structure_explode"
+    ],
+    implode:[
+        "bed_implode",
+        "divan_implode",
+        "mattress_implode",
+        "pillow_implode",
+        "platform_implode",
+        "structure_implode" 
+    ],
+    opene:[
+        "divan_open",
+        "mattress_open"
+    ],
+    closee:[
+        "divan_close",
+        "mattress_close"
     ]
 }
 
+var meuCanvas = document.getElementById('canvas')
 
-var meuCanvas = document.getElementById("camaCanvas")
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 60, meuCanvas.offsetWidth/meuCanvas.offsetHeight, 0.1, 2000 );
+var camera = new THREE.PerspectiveCamera( 60,meuCanvas.offsetWidth / meuCanvas.offsetHeight, 0.1, 1000 );
 
-
-console.log(meuCanvas)
 var renderer = new THREE.WebGLRenderer({canvas: meuCanvas, alpha: true, antialias: true});
-renderer.shadowMap.enabled = true
+var controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 var relogio = new THREE.Clock();
 var misturador = new THREE.AnimationMixer(scene);
 
 var loadModel = new THREE.GLTFLoader();
 
+renderer.setSize( meuCanvas.offsetWidth, meuCanvas.offsetHeight );
+renderer.shadowMap.enabled = true
+document.body.appendChild( renderer.domElement );
 
-camera.position.x = 0;
+camera.position.x = 80;
 camera.position.y = 50;
 camera.position.z = 200;
-camera.lookAt(5,5,0);
+camera.lookAt(0,0,0);
 
-var rotate=[]
-var actions=[rotate]
+
+var explode=[]
+var implode=[]
+var opene=[]
+var closee=[]
+
+var actions=[explode,implode,opene,closee]
 
 
 
 loadModel.load(
-    'models/vintage-bed_rot.gltf',
+    'models/vintage-bed.gltf',
     function ( gltf ) {
     scene.add( gltf.scene )
 
@@ -49,7 +70,7 @@ loadModel.load(
         }
 
     })
-    for(i of animations.rotation){
+    for(i of animations.explode){
         clip = THREE.AnimationClip.findByName(gltf.animations,i)
         actions[0].push(misturador.clipAction(clip))
     }
@@ -80,6 +101,8 @@ loadModel.load(
 }
 )
 
+
+
 var animate = function () {
     requestAnimationFrame( animate );
     renderer.render( scene, camera );
@@ -90,18 +113,23 @@ var animate = function () {
 var player = function(x){
     actions[x].forEach(element => {
         element.play()
-        element.setEffectiveTimeScale(1)
     });
 }
 
 var pauseAll = function(){
         
         actions[0].forEach(element => {
-                element.halt();
+            if(element.getEffectiveTimeScale() === 0){
+                element.setEffectiveTimeScale(1)
+            }
+            else{
+                element.halt()
+            }
     });
 
   // misturador.stopAllAction()
 }
+
 function addLights(){
     var pointLight = new THREE.PointLight( "white", 1 );
     pointLight.position.set( 500, 80, 10 );
@@ -116,18 +144,5 @@ function addLights(){
     pointLight3.position.set( -300, -300, -300 );
     scene.add( pointLight3 );
 }
-
+animate();
 addLights();
-funcsBed = function(){
-    console.log(document.getElementById('ImagemPromo1-1'))
-    renderer.setSize(meuCanvas.offsetWidth,meuCanvas.offsetHeight)
-    animate();
-    player(0);
-    document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: none !important;';
-}
-funcsBedStop = function(){
-    document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: url("Cama1000-1000.png") !important;';
-    renderer.setSize(0,0)
-    cancelAnimationFrame(animate);
-    pauseAll();
-}
