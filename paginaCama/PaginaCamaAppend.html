@@ -9,8 +9,8 @@
     <body onmouseover="playerExplodeImplode()">
         <div class="corePageCentrar" id="CorePageCentrar">
                  
-            <div class="imagemPrincipalProduto" id="ImagemPrincipalProduto" onmouseenter="playerOpen()">
-                <canvas id="canvas"></canvas>
+            <div class="imagemPrincipalProduto" id="ImagemPrincipalProduto" onmouseenter="playerOpen()"onmouseleave="playerClose()"></div>
+                <canvas id="canvas"></canvas><!-- canvas-->
                 <div class="tituloGrupo" id="tituloGrupo">
                     <div class="tituloGrupo" id="tituloGrupoMain">
                         <div class="decorTitulo" id="DecorTitulo">
@@ -28,20 +28,38 @@
             <div class="painelLateral" id="PainelLateral">
                 <div class="painelLateralGrupos" id="painelLateralGrupos1">
                     <div class="decorMaior" id="DecorMaior"></div>
-                    <div class="textoDoDecorMaior" id="TextoDoDecorMaior">a tecla ao recibo
+                    <div class="textoDoDecorMaior" id="TextoDoDecorMaior">Uma cama excelente e confortavel
                     </div>
                 </div>
                 <div class="painelLateralGrupos" id="painelLateralGrupos2">
                     <div class="decorMedio" id="DecorMedio"></div>
-                    <div class="textoDoDecorMedio" id="TextoDoDecorMedio">1x Desde 9,00€</div>
+                    <div style="height: 100%;width: 500px;position: relative;">
+                        <div id="PrecoAntDoDecorMedio">18,00€</div>
+                        <div id="DescontoDoDecorMedio">50% de desconto</div>
+                        <div class="textoDoDecorMedio" id="TextoDoDecorMedio">1x Desde 9,00€</div>
+                    </div>
                 </div>
                 <div class="painelLateralGrupos" id="painelLateralGrupos3">
-                    <div class="decorPequeno" id="DecorPequeno1"></div>
-                    <div class="textoDoDecorPequeno" id="TextoDoDecorPequeno1"> </div>
+                    <div class="decorPequeno" id="DecorPequeno1" ></div>
+                    <div class="textoDoDecorPequeno" id="TextoDoDecorPequeno1">
+                        <div style="background-image: url(../carinho.svg);width: 32px;margin-inline: 20px;background-repeat: no-repeat;background-size: cover;height: 32px;margin-top: auto; margin-bottom: auto;"></div>
+                        <span style="margin-top: auto; margin-bottom: auto;">
+                            Adicionar ao Carrinho
+                        </span>
+                    </div>
                 </div>
                 <div class="painelLateralGrupos" id="painelLateralGrupos4">
                     <div class="decorPequeno" id="DecorPequeno2"></div>
-                    <div class="textoDoDecorPequeno" id="TextoDoDecorPequeno2"> </div>
+                    <div class="textoDoDecorPequeno" id="TextoDoDecorPequeno2">
+                        <span style="margin-top: auto; margin-bottom: auto;margin-inline: 20px;font-size: 40px;">
+                            Avaliaçoes:
+                        </span>
+                    <div class="estrelas"></div>
+                    <div class="estrelas"></div>
+                    <div class="estrelas"></div>
+                    <div class="estrelas"></div>
+                    <div class="estrelas"></div>
+                 </div>
                 </div>
             </div>
             

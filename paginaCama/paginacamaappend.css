@@ -92,16 +92,54 @@
 }
 .textoDoDecorMedio{
     width: max-content;
-    display: flex;
-    position: absolute;
+    display: block;
+    position: relative;
+    font-weight: bold;
+    font-family: KoHo;
+    margin-left: 40px;
+    font-size: 50px;
+    word-wrap: break-word;
+    margin-top: 40px;
+
+}
+#PrecoAntDoDecorMedio{
+    width: max-content;
+
+    position: relative;
+    
+    font-weight: bold;
+    
+    font-family: KoHo;
+    
+    height: 50%;
+    
+    left: 40px;
+    
+    font-size: 32px;
+    
+    word-wrap: break-word;
+    
+    text-decoration: line-through;
+    
+    display: inline;
+    
+    top: 20px;
+
+}
+#DescontoDoDecorMedio{
+    width: max-content;
+    display: inline;
+    position: relative;
     font-weight: bold;
     font-family: KoHo;
     height: 100%;
     left: 40px;
-    align-self: center;
-    font-size: 50px;
+    font-size: 32px;
     word-wrap: break-word;
+    top: 20px;
+    margin-left: 40px;
 }
+
 .decorPequeno{
     width: 20px;
     height: 120px;
@@ -111,5 +149,43 @@
     background: #131D6B88;
 }
 .textoDoDecorPequeno{
+    width: max-content;
+    display: flex;
+    position: absolute;
+    font-weight: bold;
+    font-family: KoHo;
+    height: 100%;
+    left: 40px;
+    font-size: 20px;
+    word-wrap: break-word;
+    justify-content: center;
+    text-align:center;
+}
+#TextoDoDecorPequeno1{
+    border-color: #131D6B88;
+    position: absolute;
+    overflow: hidden;
+    width: 400px;
+    top: 20px;
+    height: 48px;
+    border-style: groove;
+    border-radius: 50px;
+    top: 25%;
+    bottom: 25%;
 
+}
+.estrelas{
+    background-image: url(../star-svgrepo-com_1.svg);
+
+width: 32px;
+
+background-repeat: no-repeat;
+
+background-size: cover;
+
+height: 32px;
+
+margin-top: auto;
+
+margin-bottom: auto;
 }
