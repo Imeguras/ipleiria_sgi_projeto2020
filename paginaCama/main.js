@@ -135,15 +135,36 @@ playerExplodeImplode = function(){
 }
 
 playerOpen = function(){
-    if(actions[1][0].isRunning){
-        console.log("teste")
-    }
+    actions[3].forEach(element => {
+        element.stop();
+    });
     actions[2].forEach(element => {
-        element.clampWhenFinished = true;
+        element.reset();
+        element.setLoop(THREE.LoopRepeat,1)
+        element.clampWhenFinished=true;
+        console.log(element.clampWhenFinished);
+    });
+    actions[2].forEach(element => {
         element.play();
-        
     });
 }
+
+playerClose =function(){
+    actions[2].forEach(element => {
+        element.stop();
+    });
+    actions[3].forEach(element => {
+        element.reset();
+        element.setLoop(THREE.LoopRepeat,1)
+        element.clampWhenFinished=true;
+        console.log(element.clampWhenFinished);
+    });
+    actions[3].forEach(element => {
+        element.play();
+    });
+    
+}
+
 
 function addLights(){
     var pointLight = new THREE.PointLight( "white", 1 );
