@@ -56,21 +56,21 @@ loadModel.load(
 }
 )
 
-var animate = function () {
-    requestAnimationFrame( animate );
+var animate1 = function () {
+    requestAnimationFrame( animate1 );
     renderer1.render( scene1, camera1 );
     const delta1 = relogio1.getDelta();
     misturador1.update( delta1 )
 };
 
-var player = function(x){
+var player1 = function(x){
     actionsBed[x].forEach(element => {
         element.play()
         element.setEffectiveTimeScale(1)
     });
 }
 
-var pauseAll = function(){
+var pauseAll1 = function(){
         
         actionsBed[0].forEach(element => {
                 element.halt();
@@ -96,13 +96,13 @@ addLights();
 funcsCamaVer = function(){
     console.log(document.getElementById('ImagemPromo1-1'))
     renderer1.setSize(350,350)
-    animate();
-    player(0);
-    document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: none !important;';
+    animate1();
+    player1(0);
+    //document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: none !important;';
 }
 funcsCamaVerStop = function(){
-    document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: url("Cama1000-1000.png") !important;';
+    //document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: url("Cama1000-1000.png") !important;';
     renderer1.setSize(0,0)
-    cancelAnimationFrame(animate);
-    pauseAll();
+    cancelAnimationFrame(animate1);
+    pauseAll1();
 }
