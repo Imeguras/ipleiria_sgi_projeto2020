@@ -28,7 +28,7 @@ var animations={
 var meuCanvas = document.getElementById('canvas')
 
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 60,meuCanvas.offsetWidth / meuCanvas.offsetHeight, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 60,825/ 825, 0.1, 1000 );
 
 var renderer = new THREE.WebGLRenderer({canvas: meuCanvas, alpha: true, antialias: true});
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -38,7 +38,7 @@ var misturador = new THREE.AnimationMixer(scene);
 
 var loadModel = new THREE.GLTFLoader();
 
-renderer.setSize( meuCanvas.offsetWidth, meuCanvas.offsetHeight );
+renderer.setSize( 825,825 );
 renderer.shadowMap.enabled = true
 document.body.appendChild( renderer.domElement );
 

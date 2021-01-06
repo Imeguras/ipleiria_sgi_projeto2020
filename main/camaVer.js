@@ -12,8 +12,9 @@ var animationsBed={
 
 
 var meuCanvas1 = document.getElementById("camaVerCanvas")
+console.log(meuCanvas1)
 var scene1 = new THREE.Scene();
-var camera1 = new THREE.PerspectiveCamera( 60, meuCanvas1.offsetWidth/meuCanvas1.offsetHeight, 0.1, 2000 );
+var camera1 = new THREE.PerspectiveCamera( 17.1, 1, 0.01, 4000 );
 
 var renderer1= new THREE.WebGLRenderer({canvas: meuCanvas1, alpha: true, antialias: true});
 renderer1.shadowMap.enabled = true
@@ -21,19 +22,20 @@ renderer1.shadowMap.enabled = true
 var relogio1 = new THREE.Clock();
 var misturador1 = new THREE.AnimationMixer(scene1);
 
-var loadModel = new THREE.GLTFLoader();
+var loadModel1 = new THREE.GLTFLoader();
 
 
-camera1.position.x = 0;
-camera1.position.y = 50;
-camera1.position.z = 200;
-camera1.lookAt(5,5,0);
+camera1.position.x = -15;
+camera1.position.y = 150;
+camera1.position.z = 850;
+camera1.lookAt(0,0,0);
 
-var actionsBed=[rotate]
+ var rotate1=[]
+var actionsBed=[rotate1]
 
 
 
-loadModel.load(
+loadModel1.load(
     'models/vintage-bed_verticale_rot.gltf',
     function ( gltf ) {
     scene1.add( gltf.scene )
@@ -92,14 +94,14 @@ function addLights(){
 
 addLights();
 funcsCamaVer = function(){
-    console.log(document.getElementById('ImagemPromo1-1'))
-    renderer1.setSize(meuCanvas1.offsetWidth,meuCanvas1.offsetHeight)
+    console.log(document.getElementById('ImagemPromo1-2'))
+    renderer1.setSize(350,350)
     animate1();
     player1(0);
-    //document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: none !important;';
+    document.getElementById('ImagemPromo1-2').style.cssText = 'background-image: none !important;';
 }
 funcsCamaVerStop = function(){
-    //document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: url("Cama1000-1000.png") !important;';
+    document.getElementById('ImagemPromo1-2').style.cssText = 'background-image: url("camaVer1000-1000.png") !important;';
     renderer1.setSize(0,0)
     cancelAnimationFrame(animate1);
     pauseAll1();

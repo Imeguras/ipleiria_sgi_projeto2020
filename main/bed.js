@@ -13,7 +13,7 @@ var animations={
 
 var meuCanvas = document.getElementById("camaCanvas")
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 60, meuCanvas.offsetWidth/meuCanvas.offsetHeight, 0.1, 2000 );
+var camera = new THREE.PerspectiveCamera( 17.1, 1, 0.1, 2000 );
 
 
 console.log(meuCanvas)
@@ -26,10 +26,10 @@ var misturador = new THREE.AnimationMixer(scene);
 var loadModel = new THREE.GLTFLoader();
 
 
-camera.position.x = 0;
-camera.position.y = 50;
-camera.position.z = 200;
-camera.lookAt(5,5,0);
+camera.position.x = -15;
+camera.position.y = 150;
+camera.position.z = 850;
+camera.lookAt(0,0,0);
 
 var rotate=[]
 var actions=[rotate]
@@ -120,13 +120,13 @@ function addLights(){
 addLights();
 funcsBed = function(){
     console.log(document.getElementById('ImagemPromo1-1'))
-    renderer.setSize(meuCanvas.offsetWidth,meuCanvas.offsetHeight)
+    renderer.setSize(350,350)
     animate();
     player(0);
-    document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: none !important;';
+    document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: none;';
 }
 funcsBedStop = function(){
-    document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: url("Cama1000-1000.png") !important;';
+    document.getElementById('ImagemPromo1-1').style.cssText = 'background-image: url("Cama1000-1000.png");';
     renderer.setSize(0,0)
     cancelAnimationFrame(animate);
     pauseAll();
