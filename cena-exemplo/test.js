@@ -4,7 +4,7 @@ var animations={
         "platform_rotation",
         "structure_rotation",
         "divan_rotation",
-        "matress_rotation",
+        "mattress_rotation",
         "pillow_rotation"
     ]
 }
